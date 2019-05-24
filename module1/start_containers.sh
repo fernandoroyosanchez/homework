@@ -27,14 +27,14 @@ if [ $rc != 0 ]; then
 fi
 
 # Getting image from docker registry
-echo "Getting $1 from docker registry"
+# echo "Getting $1 from docker registry"
 docker pull $1 > /dev/null
 
 # Generate simbolic link to namespace for containers
 mkdir -p /var/run/netns
 
 # Iterate over number of instances 
-echo "Starting containers"
+# echo "Starting containers"
 for i in `seq 1 $2` ; do
 	__id=`docker run --detach $1 | cut -c1-12`
 	__pid="$(docker inspect --format '{{.State.Pid}}' ${__id})"
