@@ -4,7 +4,9 @@ This module includes a simple bash script to initiate N instances of a docker im
 
 It will produce an output based on:
 
+```
 <ID container> <netns_path_container>
+```
 
 ```
 Example 
