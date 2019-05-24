@@ -18,6 +18,13 @@ then
 	exit 1
 fi 
 
+# Check docker is executable
+# 
+docker images > /dev/null 2>&1; rc=$?;
+if [ $rc != 0 ]; then 
+	display_usage
+	exit 1
+fi
 
 # Getting image from docker registry
 echo "Getting $1 from docker registry"
