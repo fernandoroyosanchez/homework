@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 set -e
 
+#### Functions ###
+display_usage() { 
+	echo "This script must be run with root privileges and"
+	echo "docker should be installed!" 
+	echo "\nUsage:\n$0 <docker_image> <instances>\n" 
+	echo " <saved_image>\t\tThe image file to run" 	
+	echo " <instances>\t\tnumber of instances to start" 	
+	echo "\nExample: $0 centos 3 "
+} 
+
 # Check params
 if [  $# -ne 2 ] 
 then  
